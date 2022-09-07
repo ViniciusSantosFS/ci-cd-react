@@ -9,10 +9,12 @@ jobs:
   build-and-deploy-app:
     runs-on: ubuntu-latest
     steps:
+      - name: copy repository machine
+        uses: actions/checkout@v3
       - name: install node js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: "16.x"
       - name: install dependencies
         run: npm ci
       - name: build project
