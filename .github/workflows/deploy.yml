@@ -8,14 +8,11 @@ on:
 jobs:
   build-and-deploy-app:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-       working-directory: ../
     steps:
       - name: install node js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: '16.x'
       - name: install dependencies
         run: npm ci
       - name: build project
